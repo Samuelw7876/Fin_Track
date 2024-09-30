@@ -1,0 +1,43 @@
+/* Asegúrate de que el contenido tenga un fondo oscuro pero legible */
+.cambiar-contrasena-content {
+    background-color: #1c1c1c; /* Fondo oscuro */
+    color: #ffffff; /* Texto en blanco */
+    padding: 20px;
+    height: 100%; /* Asegura que ocupe toda la altura de la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilo para el título */
+  .cambiar-contrasena-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #76c7c0; /* Un color distintivo para el título */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Estilo de los inputs */
+  .cambiar-contrasena-input {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px;
+    --background: #333; /* Fondo oscuro para los inputs */
+    --placeholder-color: #aaaaaa; /* Color para los placeholders */
+    --color: #ffffff; /* Texto blanco */
+    border-radius: 8px;
+  }
+  
+  /* Estilo del botón de guardar cambios */
+  .cambiar-contrasena-button {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+    --background: #76c7c0; /* Color del botón */
+    --color: #ffffff; /* Texto blanco */
+    --border-radius: 20px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  

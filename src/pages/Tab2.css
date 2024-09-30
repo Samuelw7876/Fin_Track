@@ -1,0 +1,67 @@
+/* Estilo general del tab de transacciones */
+.listaTarjetas {
+    margin-bottom: 20px;
+  }
+  
+  .tarjeta {
+    --background: #282828;
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 16px;
+  }
+  
+  .tarjeta ion-card-title {
+    font-size: 1.4rem;
+    color: #7824ff;
+  }
+  
+  .tarjeta ion-card-subtitle {
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  
+  .tarjeta p {
+    margin: 10px 0;
+    color: #e0e0e0;
+    font-size: 1.2rem;
+  }
+  
+  /* Estilo de las transacciones */
+  .listaTransaciones {
+    background-color: #1f1f1f;
+    padding: 10px;
+  }
+  
+  .transacion {
+    --background: #2c2c2c;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  
+  .transacion h2 {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .transacion p {
+    color: #cccccc;
+    font-size: 1rem;
+  }
+  
+  .transacion ion-icon {
+    color: #00ca3d;
+    font-size: 1.5rem;
+    margin-right: 12px;
+  }
+  
+  /* Estilo hover para transacciones */
+  .transacion:hover {
+    --background: #3a3a3a;
+    transition: background-color 0.3s ease;
+  }
+  
