@@ -1,8 +1,12 @@
 import {
   IonItem,
   IonLabel,
-  IonNote
-  } from '@ionic/react';
+  IonNote,
+  IonChip,
+  IonInput,
+  IonSearchbar,
+} from '@ionic/react';
+import { useState } from 'react';
 import { Message } from '../data/Mensajes';
 import './ListaMensajes.css';
 
@@ -13,21 +17,75 @@ interface MessageListItemProps {
 const ListaMensajes: React.FC<MessageListItemProps> = ({ Mensaje }) => {
   return (
     <IonItem className="listaMensajes" routerLink={`/message/${Mensaje.id}`} detail={false}>
-      <div slot="start" className="dot dot-unread"></div>
-      <IonLabel className="ion-text-wrap">
+      <div slot="start" className="viñeta"></div>
+      <IonLabel className="subListaMensajes">
         <h2>
           {Mensaje.fromName}
-          <span className="date">
-            <IonNote>{Mensaje.date}</IonNote>
+          <span className="fecha">
+            <IonNote>{Mensaje.fecha}</IonNote>
           </span>
         </h2>
         <h3>{Mensaje.subject}</h3>
-        <p>
-          Hola Profe, como esta?. Espero este bien le comento que saque algunas cosas que las hace el ionic al crearlo por primera vez de ciertas opciones, ademas que hace la animacion de recargar la pagina si con mouse desde arriba hacia abjo como cuando uno quiere recargar la pagina, no esta mal. Muchas Gracias. ;as_:[)))==))]
-        </p>
       </IonLabel>
     </IonItem>
   );
 };
 
-export default ListaMensajes;
+const ListaMensajesPage: React.FC<{ mensajes: Message[] }> = ({ mensajes }) => {
+  const [searchText, setSearchText] = useState('');
+  const [priorityFilter, setPriorityFilter] = useState<'all' | 'high' | 'medium' | 'low'>('all');
+
+  const filteredMessages = mensajes.filter((message) => {
+    const matchesSearch = message.subject.toLowerCase().includes(searchText.toLowerCase());
+    const matchesPriority =
+      priorityFilter === 'all' || message.priority === priorityFilter;
+
+    return matchesSearch && matchesPriority;
+  });
+
+  return (
+    <div>
+      {/* Su barrita de Busqueda que aun le falta  que funcione, me quede corto de tiempo :(*/}
+      <IonSearchbar
+        value={searchText}
+        onIonInput={(e) => setSearchText(e.detail.value!)}
+        placeholder="Buscar mensajes, Nombres, archivos...."
+      ></IonSearchbar>
+
+      {/* Priority filters */}
+      <div className="priority-filters">
+        <IonChip
+          onClick={() => setPriorityFilter('all')}
+          outline={priorityFilter !== 'all'}
+        >
+          Todos
+        </IonChip>
+        <IonChip
+          onClick={() => setPriorityFilter('high')}
+          outline={priorityFilter !== 'high'}
+        >
+          Prioridad Alta 
+        </IonChip>
+        <IonChip
+          onClick={() => setPriorityFilter('medium')}
+          outline={priorityFilter !== 'medium'}
+        >
+          Prioridad Media
+        </IonChip>
+        <IonChip
+          onClick={() => setPriorityFilter('low')}
+          outline={priorityFilter !== 'low'}
+        >
+          Prioridad Baja
+        </IonChip>
+      </div>
+
+      {/* Message list */}
+      {filteredMessages.map((mensaje) => (
+        <ListaMensajes key={mensaje.id} Mensaje={mensaje} />
+      ))}
+    </div>
+  );
+};
+
+export default ListaMensajesPage;

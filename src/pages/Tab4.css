@@ -1,4 +1,4 @@
-/* Estilos para la imagen de perfil */
+
 .profile-img {
   width: 120px;
   height: 120px;
@@ -9,7 +9,6 @@
   margin-bottom: 20px;
 }
 
-/* Estilo para el contenido del perfil */
 ion-card-content h1 {
   font-size: 1.2rem;
   color: #4a4a4a;
@@ -23,27 +22,25 @@ ion-card-content h2 {
   margin-bottom: 20px;
 }
 
-/* Resaltar los campos que necesitan edición */
 .edit-item-tab4 ion-label {
   font-weight: bold;
-  color: #ff6600; /* Cambia el color de la etiqueta a naranja */
+  color: #ff6600; 
   font-size: 1.1rem;
 }
 
 .edit-item-tab4 ion-input {
   --padding-start: 15px;
-  --background: #ffffff; /* Fondo oscuro */
-  color: #000000; /* Color del texto */
+  --background: #ffffff; 
+  color: #000000; 
 }
 
-/* Estilo específico para los botones del Tab4 */
 .tab4-buttons ion-button {
   margin-top: 20px;
   --border-radius: 10px;
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   font-weight: bold;
   --padding: 15px 20px;
-  --background: linear-gradient(90deg, #007bff, #00c6ff); /* Efecto degradado en los botones */
+  --background: linear-gradient(90deg, #007bff, #00c6ff); 
 }
 
 .tab4-buttons ion-button + ion-button {

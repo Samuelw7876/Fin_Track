@@ -32,10 +32,10 @@
     margin-top: 20px;
   }
   
-  .volver-config-button {
+  .botonVolver {
     margin-top: 10px;
     --background: #f4f4f4;
-    --color: #000;
+    --color: #000000;
     --border-radius: 10px;
   }
     

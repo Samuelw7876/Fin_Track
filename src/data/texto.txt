@@ -1,0 +1,3 @@
+Informacion util:
+
+El grafico funciona cuando se recarga la pagina nose porque pero antes no :(

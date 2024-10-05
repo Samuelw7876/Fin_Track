@@ -1,8 +1,96 @@
-import { IonList, IonItem, IonLabel, IonIcon, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent } from '@ionic/react';
+import { useEffect, useRef } from 'react';
+import * as echarts from 'echarts';
+import {
+  IonList,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardSubtitle,
+  IonCardContent,
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonButtons,
+  IonMenuButton,
+  IonItem, 
+  IonLabel, 
+  IonIcon
+} from '@ionic/react';
 import './Tab2.css';
 import { cashOutline } from 'ionicons/icons';
 
 const Tab2: React.FC = () => {
+  const chartRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const chartDom = chartRef.current!;
+    const myChart = echarts.init(chartDom);
+
+    const option = {
+      title: {
+        text: 'Ganancias Semanales',
+        left: 'center',
+        textStyle: {
+          color: '#fff',
+        },
+      },
+      tooltip: {
+        trigger: 'axis',
+      },
+      grid: {
+        left: '10%',    // Aumenta los márgenes para evitar que el gráfico se vea comprimido
+        right: '10%',   
+        bottom: '15%',  // Ajusta este valor para que el gráfico tenga más espacio vertical
+        top: '15%',     // Ajusta este valor si el título está muy cerca de la gráfica
+        containLabel: true,
+      },
+      xAxis: {
+        type: 'category',
+        data: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],  // Puedes expandir los días si es necesario
+        axisLabel: {
+          color: '#fff', // Color de las etiquetas del eje X
+        },
+      },
+      yAxis: {
+        type: 'value',
+        axisLabel: {
+          color: '#fff', // Color de las etiquetas del eje Y
+        },
+        splitLine: {
+          lineStyle: {
+            color: 'rgba(255, 255, 255, 0.1)',  // Líneas horizontales más suaves
+          },
+        },
+      },
+      series: [
+        {
+          name: 'Ganancia',
+          type: 'bar',
+          data: [500, 700, 600, 800, 900, 1000, 1100],
+          itemStyle: {
+            color: '#7824ff',
+          },
+          barWidth: '50%',  // Ajusta el ancho de las barras para evitar que se vean muy delgadas o gruesas
+        },
+      ],
+    };
+
+    myChart.setOption(option);
+
+    // Asegurar que el gráfico sea responsivo
+    const resizeChart = () => {
+      myChart.resize();
+    };
+
+    window.addEventListener('resize', resizeChart);
+
+    return () => {
+      window.removeEventListener('resize', resizeChart);
+      myChart.dispose();
+    };
+  }, []);
 
   return (
     <IonPage>
@@ -10,12 +98,16 @@ const Tab2: React.FC = () => {
         <IonToolbar>
           <IonTitle>Mis Transacciones</IonTitle>
           <IonButtons slot="end">
-            <IonMenuButton autoHide={false}/>
+            <IonMenuButton autoHide={false} />
           </IonButtons>
         </IonToolbar>
       </IonHeader>
 
       <IonContent>
+        {/* Contenedor del gráfico */}
+        <div ref={chartRef} id="gananciasChart" style={{ width: '100%', height: '300px' }}></div>
+
+        {/* Tarjetas de transacciones */}
         <IonList className="listaTarjetas">
           <IonCard className="tarjeta">
             <IonCardHeader>
@@ -51,7 +143,7 @@ const Tab2: React.FC = () => {
           </IonCard>
         </IonList>
 
-        {/* Lista de transacciones */}
+        {/* Lista de ejemplos de Movimientos */}
         <IonList className="listaTransaciones">
         <IonItem className="transacion">
             <IonIcon icon={cashOutline} slot="start" />
