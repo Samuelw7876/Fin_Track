@@ -1,92 +1,50 @@
 export interface Message {
+  id: number;
   fromName: string;
   subject: string;
-  date: string;
-  id: number;
+  fecha: string;
+  priority: 'high' | 'medium' | 'low';  // Campo de prioridad agregado
 }
 
-const Mensaje: Message[] = [
+const messages: Message[] = [
   {
-    fromName: 'Fernando Herrera',
+    id: 0, fromName: 'Fernando Herrera',
     subject: 'Actualización de software del sistema operativo',
-    date: '23:59 PM',
-    id: 0
+    fecha: '23:59 PM', priority: 'high',
   },
   {
+    id: 1,
     fromName: 'Samuel Catrileo :)',
     subject: 'Intento de Entrega de la App',
-    date: '23:59 PM',
-    id: 1
+    fecha: '23:59 PM',
+    priority: 'medium',
   },
   {
+    id: 2,
     fromName: 'Carlos Morales',
-    subject: 'Solicitud de soporte técnico para errores de re',
-    date: '4:00 AM',
-    id: 2
-
+    subject: 'Solicitud de soporte técnico para errores de red',
+    fecha: '4:00 AM',
+    priority: 'low',
   },
   {
+    id: 3,
     fromName: 'Luis Martínez',
     subject: 'Implementación de nuevas políticas de ciberseguridad',
-    date: 'Ayer',
-    id: 3
+    fecha: 'Ayer',
+    priority: 'high',
   },
   {
+    id: 4,
     fromName: 'Diego Jiménez',
-    subject: 'Implementación de nuevas políticas de ciberseguridad',
-    date: 'Ayer',
-    id: 4
+    subject: 'Solicitud de ayuda con la instalación de bases de datos',
+    fecha: 'Hace 3 días',
+    priority: 'medium',
   },
-  {
-    fromName: 'Andrea Cornerston',
-    subject: 'Implementación de nuevas políticas de ciberseguridad',
-    date: 'Hace 3 dias',
-    id: 5
-  },
-  {
-    fromName: 'Andrea Delgado',
-    subject: 'ect',
-    date: 'Hace 4 dias',
-    id: 6
-  },
-  {
-    fromName: 'Roberto Castillo',
-    subject: 'Solicitud de ayuda en la instalación de bases de datos MySQL',
-    date: 'Hcae 6 dias',
-    id: 7
-  },
-  {
-    fromName: 'Verónica Reyes',
-    subject: 'Solicitud de ayuda en la instalación de bases de datos MySQL',
-    date: 'Hcae 6 dias',
-    id: 8
-  },
-  {
-    fromName: 'Roberto Castillo',
-    subject: 'Solicitud de ayuda en la instalación de bases de datos MySQL',
-    date: 'Semana Pasada',
-    id: 9
-  },
-  {
-    fromName: 'Andrea Cornerston',
-    subject: 'Solicitud de ayuda en la instalación de bases de datos MySQL',
-    date: 'Semana Pasada',
-    id: 10
-  },
-  {
-    fromName: 'Lucía Castro',
-    subject: 'No queria seguir',
-    date: 'Semana Pasada',
-    id: 11
-  },
-  {
-    fromName: 'Héctor Muñoz',
-    subject: 'Solicitud de ayuda en la instalación de bases de datos MySQL',
-    date: 'Mes Pasado',
-    id: 12
-  }
 ];
 
-export const getMessages = () => Mensaje;
+// Función para obtener un mensaje por ID
+export function getMessage(id: number): Message | undefined {
+  return messages.find((message) => message.id === id);
+}
 
-export const getMessage = (id: number) => Mensaje.find(m => m.id === id);
+export default messages;

@@ -41,11 +41,11 @@ function VistaMensaje() {
           <>
             <IonItem>
               <IonIcon aria-hidden="true" icon={personCircle} color="primary"></IonIcon>
-              <IonLabel className="ion-text-wrap">
+              <IonLabel className="subListaMensajes">
                 <h2>
                   {Mensaje.fromName}
-                  <span className="date">
-                    <IonNote>{Mensaje.date}</IonNote>
+                  <span className="fecha">
+                    <IonNote>{Mensaje.fecha}</IonNote>
                   </span>
                 </h2>
                 <h3>
@@ -67,7 +67,7 @@ function VistaMensaje() {
             </div>
           </>
         ) : (
-          <div>Message not found</div>
+          <div>Mensaje no Funciona</div>
         )}
       </IonContent>
     </IonPage>

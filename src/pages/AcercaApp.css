@@ -1,32 +1,32 @@
-.acerca-app-content {
-    --background: #141414; /* Fondo oscuro personalizado */
-    color: #d0d0d0; /* Color del texto */
+.contenedorAcercaApp {
+    --background: #141414; 
+    color: #d0d0d0; 
   }
   
-  .app-card {
-    background-color: #1f1f1f; /* Fondo para las tarjetas */
+  .blockAcercaApp {
+    background-color: #1f1f1f; 
     color: #ffffff;
-    margin-bottom: 30px; /* Margen entre las tarjetas */
+    margin-bottom: 30px; 
     padding: 20px;
     border-radius: 12px;
   }
   
-  .app-card .ion-card-title {
-    color: #6699ff; /* Azul claro para los títulos */
+  .blockAcercaApp .ion-card-title {
+    color: #6699ff; 
     font-size: 1.6rem;
   }
   
-  .app-card p, .app-card ul {
+  .blockAcercaApp p, .blockAcercaApp ul {
     font-size: 1.1rem;
-    color: #cccccc; /* Texto más claro */
+    color: #cccccc; 
   }
   
   ul {
-    list-style-type: square; /* Marcadores cuadrados para las listas */
+    list-style-type: square; 
     padding-left: 25px;
   }
   
-  .acerca-app-content .ion-breadcrumb {
-    color: #6699ff; /* Azul claro para las migas de pan */
+  .contenedorAcercaApp .ion-breadcrumb {
+    color: #6699ff; 
   }
   

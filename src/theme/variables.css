@@ -1,0 +1,26 @@
+/* Variables globales en src/theme/variables.css */
+:root {
+    /* Esto en teoria deberia hacer que se vea bien cuando este el sistema en modo claro */
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --card-background: #f0f0f0;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    /* Y esto lo mismo pero en Modo Oscuro */
+    :root {
+      --background-color: #1e1e1e;
+      --text-color: #ffffff;
+      --card-background: #333333;
+    }
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .ion-card {
+    background-color: var(--card-background);
+  }
+  

@@ -37,16 +37,13 @@ ion-item ion-note {
 }
 
 /* Estilos para los puntos de notificación */
-.dot {
+.viñeta{
   display: block;
   height: 12px;
   width: 12px;
   border-radius: 50%;
   align-self: start;
   margin: 16px 10px 16px 16px;
-}
-
-/* Puntos de notificación de mensajes no leídos */
-.dot-unread {
   background: var(--ion-color-primary);
 }
+

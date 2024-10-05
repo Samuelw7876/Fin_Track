@@ -88,7 +88,7 @@ const CambiarContraseña: React.FC = () => {
         <br />
         {/* Botón para volver a Configuración */}
         <IonButton
-          className="volver-config-button"
+          className="botonVolver"
           expand="block"
           color="light"
           onClick={handleBackToConfig}
@@ -105,7 +105,7 @@ const CambiarContraseña: React.FC = () => {
               ? 'Las contraseñas no coinciden. Intenta de nuevo.'
               : 'Contraseña actualizada correctamente.'
           }
-          buttons={['OK']}
+          buttons={['Hecho']}
         />
       </IonContent>
     </IonPage>

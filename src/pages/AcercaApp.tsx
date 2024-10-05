@@ -28,13 +28,13 @@ const AcercaApp: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent className="ion-padding acerca-app-content">
+      <IonContent className="ion-padding contenedorAcercaApp">
         <IonBreadcrumbs>
           <IonBreadcrumb href="/Tab1">Inicio</IonBreadcrumb>
           <IonBreadcrumb>Página Actual</IonBreadcrumb>
         </IonBreadcrumbs>
 
-        <IonCard className="app-card">
+        <IonCard className="blockAcercaApp">
           <IonCardHeader>
             <IonCardTitle>¿Qué es esta App?</IonCardTitle>
           </IonCardHeader>
@@ -46,7 +46,7 @@ const AcercaApp: React.FC = () => {
           </IonCardContent>
         </IonCard>
 
-        <IonCard className="app-card">
+        <IonCard className="blockAcercaApp">
           <IonCardHeader>
             <IonCardTitle>Características Clave</IonCardTitle>
           </IonCardHeader>
@@ -54,13 +54,11 @@ const AcercaApp: React.FC = () => {
             <ul>
               <li>Control de cuentas y transacciones</li>
               <li>Soporte para múltiples monedas</li>
-              <li>Reportes financieros detallados</li>
-              <li>Autenticación en dos pasos</li>
             </ul>
           </IonCardContent>
         </IonCard>
 
-        <IonCard className="app-card">
+        <IonCard className="blockAcercaApp">
           <IonCardHeader>
             <IonCardTitle>Última Actualización</IonCardTitle>
           </IonCardHeader>
